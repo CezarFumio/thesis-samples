@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Áudios Convertidos</title>
+    <style>
+        /* Estilo da tabela */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        audio {
+            width: 300px;  /* Tamanho fixo para o player de áudio */
+        }
+
+        #protected-content {
+            display: none; /* Esconde o conteúdo protegido inicialmente */
+        }
+    </style>
+    <script>
+        
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            // Altere 'sua_senha' para a senha desejada
+            if (password === 'whisper') {  
+                document.getElementById('protected-content').style.display = 'block';
+                document.getElementById('login-form').style.display = 'none';
+            } else {
+                alert('Senha incorreta!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Whisper to Normal Conversion SAMPLES</h1>
+    
+    <!-- Formulário de login -->
+    <div id="login-form">
+        
+        <input type="password" id="password" placeholder="Digite a senha">
+        <button onclick="checkPassword()">Entrar</button>
+        <p style="font-size: 0.9em; color: gray; margin-top: 5px;">
+        Contato para a senha: <a href="mailto:cezaryamamura@gmail.com">cezaryamamura@gmail.com</a>
+    </p>
+    </div>
+        
+    <!-- Conteúdo protegido -->
+    <div id="protected-content">
+	<!-- Informações adicionais -->
+
+  <p>
+    <strong>Author:</strong> Cezar Fumio Yamamura<br>
+    <strong>Datasets:</strong> DynaVoicer<br>
+    <strong>Note:</strong> Based on Doctor thesis <em>(text in progress)</em><br>
+</p>
+
+    <hr>
+
+    <h2>CAP 5 - Study of Voice Conversion Models Applied to Whispered Speech</h2>
+
+    <p>
+        <strong>WAV2VEC-VC</strong>: github: <a href="https://github.com/prairie-schooner/wav2vec-vc" target="_blank">https://github.com/prairie-schooner/wav2vec-vc</a> |
+        artigo: <a href="https://ieeexplore.ieee.org/document/10447984" target="_blank">https://ieeexplore.ieee.org/document/10447984</a><br>
+        <strong>LVC-VC</strong>: github: <a href="https://github.com/wonjune-kang/lvc-vc" target="_blank">https://github.com/wonjune-kang/lvc-vc</a> |
+        artigo: <a href="https://arxiv.org/abs/2205.09784" target="_blank">https://arxiv.org/abs/2205.09784</a><br>
+        <strong>TRIAAN-VC</strong>: github: <a href="https://github.com/winddori2002/TriAAN-VC" target="_blank">https://github.com/winddori2002/TriAAN-VC</a> |
+        artigo: <a href="https://arxiv.org/abs/2303.09057" target="_blank">https://arxiv.org/abs/2303.09057</a><br>
+        <strong>KNN-VC</strong>: github: <a href="https://github.com/bshall/knn-vc" target="_blank">https://github.com/bshall/knn-vc</a> |
+        artigo: <a href="https://arxiv.org/abs/2305.18975" target="_blank">https://arxiv.org/abs/2305.18975</a><br>
+	
+    </p>
+
+<!-- Tabela com os players de áudio -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Source Speaker</th>
+            <th>Target Speaker</th>
+            <th>Wav2Vec-VC</th>
+            <th>LVC-VC</th>
+            <th>TRIAAN-VC</th>
+            <th>KNN-VC</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <audio controls>
+                    <source src="audios/source/SPF01_42_02_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/target/SPF01_48_01.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/WAV2VEC-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/LVC-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/TRIAAN-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/KNN-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+                    <tr>
+            <td>
+                <audio controls>
+                    <source src="audios/source/SPM01_42_02_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/target/SPM01_48_01.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/WAV2VEC-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/LVC-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/TRIAAN-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/KNN-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+        </tr>
+        </tr>
+    </tbody>
+</table>
+
+    <hr>
+
+    <h2>CAP 7.1 - KNN-VC Using Other SSL Feature Extractors</h2>
+
+    <p>
+
+        Bseline used in KNN-VC paper is WavLM Large <br>
+        Other SSL models tested: Data2Vec, Hubert and Wav2Vec2 <br>
+        <strong>WavLM</strong>: huggingface: <a href="https://huggingface.co/microsoft/wavlm-large" target="_blank">https://huggingface.co/microsoft/wavlm-large</a> |
+        artigo: <a href="https://arxiv.org/pdf/2110.13900" target="_blank">https://arxiv.org/pdf/2110.13900</a><br>
+        <strong>Data2Vec</strong>: huggingface: <a href="https://huggingface.co/facebook/data2vec-audio-large-960h" target="_blank">https://huggingface.co/facebook/data2vec-audio-large-960h</a> |
+        artigo: <a href="https://arxiv.org/abs/2202.03555" target="_blank">https://arxiv.org/abs/2202.03555</a><br>
+        <strong>Hubert</strong>: huggingface: <a href="https://huggingface.co/facebook/hubert-large-ls960-ft" target="_blank">https://huggingface.co/facebook/hubert-large-ls960-ft</a> |
+        artigo: <a href="https://arxiv.org/pdf/2106.07447" target="_blank">https://arxiv.org/pdf/2106.07447</a><br>
+        <strong>Wav2Vec</strong>: huggingface: <a href="https://huggingface.co/facebook/wav2vec2-large-960h" target="_blank">https://huggingface.co/facebook/wav2vec2-large-960h</a> |
+        artigo: <a href="https://arxiv.org/abs/2006.11477" target="_blank">https://arxiv.org/abs/2006.11477</a><br>
+	
+    </p>
+
+<!-- Tabela com os players de áudio -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Source Speaker</th>
+            <th>Target Speaker</th>
+            <th>WavLM</th>
+            <th>Data2Vec</th>
+            <th>Hubert</th>
+            <th>Wav2Vec2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <audio controls>
+                    <source src="audios/source/SPF01_42_02_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/target/SPF01_48_01.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/KNN-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/Data2Vec/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/Hubert/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/wav2vec2/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+                    <tr>
+            <td>
+                <audio controls>
+                    <source src="audios/source/SPM01_42_02_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/target/SPM01_48_01.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/KNN-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/Data2Vec/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/Hubert/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/wav2vec2/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+        </tr>
+        </tr>
+    </tbody>
+</table>
+
+    <hr>
+
+    <h2>CAP 7.2 ~ 7.4 - IMPROVING KNN-VC</h2>
+
+    <p>
+        Works inspired <br>
+        <strong>7.2 - LoRA</strong>: huggingface: <a href="https://huggingface.co/docs/peft/main/conceptual_guides/lora" target="_blank">https://huggingface.co/docs/peft/main/conceptual_guides/lora</a> |
+        artigo: <a href="https://arxiv.org/abs/2106.09685" target="_blank">https://arxiv.org/abs/2106.09685</a><br>
+        <strong>7.3 - wKNN-VC</strong>: artigo: <a href="https://ieeexplore.ieee.org/document/10800247" target="_blank">https://ieeexplore.ieee.org/document/10800247/ </a><br>
+        <strong>7.4 - MLP-WavLM-VC</strong>: Created by author
+	
+    </p>
+
+<!-- Tabela com os players de áudio -->
+<table border="1">
+    <thead>
+        <tr>
+            <th>Source Speaker</th>
+            <th>Target Speaker</th>
+            <th>KNN-VC</th>
+            <th>KNN-VC (LoRA)</th>
+            <th>wKNN-VC</th>
+            <th>MLP-WavLM-VC</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <audio controls>
+                    <source src="audios/source/SPF01_42_02_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/target/SPF01_48_01.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/KNN-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/Lora1/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/wKNN-VC/SPF01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/MLP/SPF01_42_01_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+                    <tr>
+            <td>
+                <audio controls>
+                    <source src="audios/source/SPM01_42_02_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/target/SPM01_48_01.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/KNN-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/Lora1/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/wKNN-VC/SPM01_42_02_part1_converted.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+            <td>
+                <audio controls>
+                    <source src="audios/MLP/SPM01_42_01_part1.wav" type="audio/wav">
+                    Seu navegador não suporta o elemento de áudio.
+                </audio>
+            </td>
+        </tr>
+        </tr>
+    </tbody>
+</table>
